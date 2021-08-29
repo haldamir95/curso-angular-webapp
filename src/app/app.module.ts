@@ -12,8 +12,10 @@ import { appRoutingProviders } from './app.routing';
 import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/producto.component';
+import { ProductoAddComponent } from './components/producto-add.component';
 
-
+//import para los servicios api rest
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { ProductosListComponent } from './components/producto.component';
     //Mis declarations
     HomeComponent,
     ErrorComponent,
-    ProductosListComponent
+    ProductosListComponent,
+    ProductoAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routing
+    routing,
+    HttpClientModule
   ],
   providers: [ appRoutingProviders],
   bootstrap: [AppComponent]
