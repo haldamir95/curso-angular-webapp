@@ -4,13 +4,18 @@ import { RouterModule } from "@angular/router";
 
 //IMPORTAR NUESTROS COMPONENTES
 import { HomeComponent } from "./components/home.component";
+import { ErrorComponent } from "./components/error.component";
+import { ProductosListComponent } from "./components/producto.component";
+
 
 
 //CREAR VARIABLE ARRAY DE RUTAS
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
-    {path: '**', component: HomeComponent}
+    {path: 'productos', component: ProductosListComponent },
+    
+    {path: '**', component: ErrorComponent}
 ];
 
 

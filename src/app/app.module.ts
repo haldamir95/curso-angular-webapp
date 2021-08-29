@@ -10,11 +10,18 @@ import { appRoutingProviders } from './app.routing';
 
 //MIS COMPONENTES
 import { HomeComponent } from './components/home.component';
+import { ErrorComponent } from './components/error.component';
+import { ProductosListComponent } from './components/producto.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     //Mis declarations
-    HomeComponent
+    HomeComponent,
+    ErrorComponent,
+    ProductosListComponent
   ],
   imports: [
     BrowserModule,
