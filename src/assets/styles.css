@@ -57,8 +57,14 @@
 
 
 #footer{
-    margin-top: 50px;
+    margin-top: 30px;
     border-top: 1px solid #eee;
     padding-top: 10px;
     color: gray;
+}
+
+#main .jumbotron{
+    padding: 50px;
+    margin-top: 30px;
+    border-radius: 20px;
 }
