@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/producto.component';
 import { ProductoAddComponent } from './components/producto-add.component';
+import { ProductodetailComponent } from './components/producto-detail.component';
 
 //import para los servicios api rest
 import { HttpClientModule } from '@angular/common/http';
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ErrorComponent,
     ProductosListComponent,
-    ProductoAddComponent
+    ProductoAddComponent,
+    ProductodetailComponent
   ],
   imports: [
     BrowserModule,

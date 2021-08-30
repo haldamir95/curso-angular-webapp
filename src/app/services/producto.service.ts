@@ -36,6 +36,10 @@ export class ProductoService{
         return this._http.get(this.url+'/productos').pipe(map(res => JSON.parse(JSON.stringify(res))));
     }
 
+    getProducto(id:string){
+        return this._http.get(this.url+'/productos/'+id).pipe(map(res => JSON.parse(JSON.stringify(res))));
+    }
+
     addProducto(producto: Producto){
         //Convertir el objeto producto en JSON para enviarlo al API
         let json = JSON.stringify(producto);
