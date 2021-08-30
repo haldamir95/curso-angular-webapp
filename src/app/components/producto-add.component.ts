@@ -33,6 +33,7 @@ export class ProductoAddComponent{
 
     public titulo!:string;
     public producto!:Producto;
+    public is_edit!:boolean;
 
     constructor(
         //Agregar las propiedades privadas para utilizar el servicio del producto
@@ -42,6 +43,7 @@ export class ProductoAddComponent{
     ){
         this.titulo = 'Crear un Nuevo Producto';
         this.producto = new Producto(0,"","",0,"");
+        this.is_edit = false;
     }
 
 
@@ -53,7 +55,7 @@ export class ProductoAddComponent{
         console.log(this.producto);
 
         //validar que se quiera subir un producto
-        if(this.filesToUpload.length >= 1){
+        if(this.filesToUpload && this.filesToUpload.length >= 1){
             //INTENTAR SUBIR EL ARCHIVO 
             this._productoService.makeFileRequest(GLOBAL.url+'/upload-file',[],this.filesToUpload).then(
                 (result)=>{

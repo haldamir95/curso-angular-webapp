@@ -22,11 +22,15 @@
                 <div class="caption">
                     <h3> {{producto.nombre}} </h3>
                     <p>Q. {{producto.precio}} </p>
-                    <p>
+                    <div *ngIf="confirmado != producto.id.toString()">
                         <a [routerLink] = "['/producto',producto.id]" class="btn btn-sm btn-primary">Ver</a>
-                        <a href="" class="btn btn-sm btn-warning">Editar</a>
-                        <a href="" class="btn btn-sm btn-danger">Eliminar</a>
-                    </p>
+                        <a [routerLink] = "['/editar-producto',producto.id]" class="btn btn-sm btn-warning">Editar</a>
+                        <a class="btn btn-sm btn-danger" (click)="borrarConfirm(producto.id.toString())">Eliminar</a>
+                    </div>
+                    <div class="seguro" *ngIf="confirmado == producto.id.toString()">
+                        <a class="btn btn-sm btn-danger" (click)="onDeleteProducto(producto.id.toString())">Quiero Eliminarlo</a>
+                        <a class="btn btn-sm btn-default" (click)="cancelarConfirm()">Cancelar</a>
+                    </div>
                 </div>
             </div>
         </div>

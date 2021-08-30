@@ -3,8 +3,8 @@
         <h2>{{titulo}}</h2>
         <p>La pagina que intentas cargar no existe. Prueba con estos botones</p>
         <p>
-            <a href="#" class="btn btn-lg btn-primary">Ver Productos</a>
-            <a href="#" class="btn btn-lg btn-success">Anadir Productos</a>
+            <a [routerLink]="['/productos']" class="btn btn-lg btn-primary">Ver Productos</a>
+            <a [routerLink]="['/crear-producto']" class="btn btn-lg btn-success">Anadir Productos</a>
         </p>
     </div>
 </div>

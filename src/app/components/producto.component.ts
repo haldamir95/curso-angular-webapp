@@ -28,6 +28,9 @@ export class ProductosListComponent{
     //arreglo de productos 
     public productos!:Producto[];
 
+    //variable para confirmar la eliminacion
+    public confirmado!:string;
+
 
     constructor(
         //propiedades privadas para el servicio de router
@@ -37,12 +40,43 @@ export class ProductosListComponent{
     ){
 
         this.titulo='Listado de Productos';
+        this.confirmado = "";
     }
 
 
     ngOnInit(){
         console.log('Componente producto.component.ts cargado');
         
+        this.getProductos();
+
+    }
+
+
+    borrarConfirm(id:string){
+        this.confirmado = id;
+    }
+
+    cancelarConfirm(){
+        this.confirmado = "";
+    }
+
+    onDeleteProducto(id:string){
+        this._productoService.deleteProducto(id).subscribe(
+            response => {
+                if(response.code ==200){
+                    this.getProductos();
+                }else{
+                    alert('Error al eliminar');
+                }
+            },
+            error =>{
+                console.log(<any>error);
+            }
+        );
+    }
+
+
+    getProductos(){
         //utilizar el servicio producto para llamar al metodo getproducto 
         //utilizar el subscribe para usar los metodos de flecha result y error 
         this._productoService.getProductos().subscribe(
@@ -58,7 +92,6 @@ export class ProductosListComponent{
                 console.log(<any>error);
             }
         );
-
     }
 
 }
