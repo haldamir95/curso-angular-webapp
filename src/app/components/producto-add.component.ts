@@ -29,13 +29,19 @@ import { Producto } from "../models/producto";
 export class ProductoAddComponent{
 
     public titulo!:string;
+    public producto!:Producto;
 
     constructor(){
         this.titulo = 'Crear un Nuevo Producto';
+        this.producto = new Producto(0,"","",0,"");
     }
 
 
     ngOnInit(){
         console.log('componente Producto-add.Component.ts cargado')
+    }
+
+    onSubmit(){
+        console.log(this.producto);
     }
 }

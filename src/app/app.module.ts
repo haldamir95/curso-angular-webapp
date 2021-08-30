@@ -17,6 +17,9 @@ import { ProductoAddComponent } from './components/producto-add.component';
 //import para los servicios api rest
 import { HttpClientModule } from '@angular/common/http';
 
+//import para los FORMULARIOS
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     routing,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ appRoutingProviders],
   bootstrap: [AppComponent]
